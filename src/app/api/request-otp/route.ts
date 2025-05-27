@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
   const { email } = await req.json();
 
   const otp = generateOtp();
-  const expires = new Date(new Date().getTime() + 60 * 1000).getTime();
+  const expires = new Date(new Date().getTime() + 3 * 60 * 1000).getTime();
 
   // Delete any existing OTP for this email
   try {
